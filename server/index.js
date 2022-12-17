@@ -8,8 +8,9 @@ import cors from "cors";
 import dotenv from "dotenv";
 import {fileURLToPath} from "url";
 import mongoose from "mongoose";
-import {register} from "./controllers/auth.js"
-import authRoutes from "./routes/auth.js"
+import {register} from "./controllers/auth.js";
+import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/users.js";
 
 // Configuration
 
@@ -45,6 +46,7 @@ app.post("/auth/register", upload.single("picture"), register)
 // ROUTES
 
 app.use("/auth",authRoutes);
+app.use("/users", userRoutes);
 
 // MONGOOSE setup
 
