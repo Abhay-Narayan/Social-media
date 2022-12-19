@@ -7,7 +7,11 @@ import ProfilePage from 'scenes/profilePage';
 function App() {
   return (
     <div className="App">
-       
+      <BrowserRouter>
+      <Route path = "/" element ={<LoginPage/>}/>
+      <Route path = "/home" element ={<HomePage/>}/>
+      <Route path = "/profile/:userID" element ={<ProfilePage/>}/>
+      </BrowserRouter>
     </div>
   );
 }
